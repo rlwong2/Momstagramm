@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
+
 import axios from 'axios';
 import Stories from './Stories.jsx';
 import Feed from './Feed.jsx';
