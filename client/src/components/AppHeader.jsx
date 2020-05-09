@@ -7,7 +7,7 @@ const AppContainer = styled.div`
   height: 60px;
 `
 
-const title = styled.p`
+const Title = styled.p`
   margin: auto;
 `
 
@@ -15,7 +15,7 @@ export default function AppHeader(props) {
 
     return(
         <AppContainer>
-          
+          <Title>Momstagram</Title>
         </AppContainer>
     )
 }

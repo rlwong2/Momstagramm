@@ -17,8 +17,8 @@ export default function Card(props) {
 
     return(
         <div>
-            <CardHeader photo={props.avatar} />
-            <PhotoContainer style={style} />
+            <CardHeader avatar={props.photo.avatar} />
+            <PhotoContainer photo={props.photo.url} style={style} />
         </div>
     )
 }
