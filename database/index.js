@@ -11,6 +11,7 @@ db.once('open', function() {
 const photoSchema = new mongoose.Schema({
     id: String,
     url: String,
+    avatar: String,
     username: String,
     caption: String
 })

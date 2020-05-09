@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Stories(props) {
+export default function CardHeader(props) {
 
     return(
         <div>

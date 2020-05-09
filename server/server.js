@@ -14,8 +14,13 @@ app.use(express.static(path.join(__dirname, '..client/dist')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('//status', function(req, res){
+app.get('/status', function(req, res){
     res.send({"message": "It's alive"});
 });
+
+app.get('/photos', function(req, res) {
+    db.getPhotos()
+    res.json()
+})
 
 module.exports = app;
