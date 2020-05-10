@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import axios from 'axios';
 import StoriesHeader from './StoriesHeader.jsx';
 import Stories from './Stories.jsx';
 import Feed from './Feed.jsx';
@@ -21,7 +20,7 @@ const AppContainer = styled.div`
 const FullscreenHide = styled.div`
     visibility: ${props => props.fullscreen ? "visible" : "hidden"};
     z-index: ${props => props.fullscreen ? "2000" : "0"};
-    height: 896px;
+    height: ${props => props.fullscreen ? "896" : "0"};
     width: 414px;
     margin: 0;
     position: relative;
