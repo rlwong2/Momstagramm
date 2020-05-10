@@ -7,7 +7,7 @@ const CardDiv = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0;
+    margin: 0 auto;
     border-bottom: 1px solid #ccc;
     content: "";
     display: table;
@@ -28,7 +28,6 @@ const PhotoDiv = styled.div`
     background-position: 50% 50%;
     background-size: cover;
     margin: 0 auto;
-    border: 1px solid #ccc;
     height: 
 `
 

@@ -14,8 +14,7 @@ const StoriesDiv = styled.div`
     left: 0;
     background-color: rgb(17, 17, 17);
     margin: 0;
-    height: 896px;
-    width: 414px;
+
 `
 
 export default function Stories(props) {
