@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import axios from 'axios';
@@ -11,13 +11,16 @@ export default function App() {
     const [photos, setPhotos] = useState([]);
     const [stories, setStories] = useState([]);
 
-    useEffect(async () => {
-        const res = await axios.get('http://localhost:3000/photos');
-        setPhotos(res.data);
+    useEffect(() => {
+        async function fetchData() {
+            const res = await axios.get('http://localhost:3000/photos');
+            setPhotos(res.data);
 
-        const result = await axios.get('http://localhost:3000/stories');
-        setStories(result.data);
-    });
+            const result = await axios.get('http://localhost:3000/stories');
+            setStories(result.data);
+        }
+        fetchData()
+    }, []);
 
     return(
         <div>
