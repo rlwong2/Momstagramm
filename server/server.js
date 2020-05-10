@@ -2,14 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 
 const db = require('../database/index')
 
 let app = express();
 
 app.use(cors());
-app.use(morgan('dev'))
+// app.use(morgan('dev'))
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
