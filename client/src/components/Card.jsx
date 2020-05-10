@@ -9,6 +9,10 @@ const CardDiv = styled.div`
     flex-direction: column;
     margin: 0;
     border-bottom: 1px solid #ccc;
+    content: "";
+    display: table;
+    clear: both;
+    min-height: 450px;
 `
 
 const Caption = styled.div`
@@ -25,6 +29,7 @@ const PhotoDiv = styled.div`
     background-size: cover;
     margin: 0 auto;
     border: 1px solid #ccc;
+    height: 
 `
 
 export default function Card(props) {

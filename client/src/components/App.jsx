@@ -10,7 +10,7 @@ const AppContainer = styled.div`
     display: flex;
     flex-direction: column;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: stretch;
     margin: 0 auto;
     position: absolute;

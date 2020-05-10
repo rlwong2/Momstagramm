@@ -11,11 +11,10 @@ const FeedDiv = styled.div`
     justify-content: flex-start;
     align-items: stretch;
     position: relative;
-    top: 100px;
+    top: 60px;
     height: 100vh;
     width: 100vw;
     margin: 0 auto;
-    margin-bottom: 300px;
     z-index: 0.5;
 `
 
