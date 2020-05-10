@@ -28,6 +28,7 @@
     "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-image": "^2.4.0",
     "react-insta-stories": "^2.0.2",
     "react-player": "^2.0.1",
     "styled-components": "^5.1.0"

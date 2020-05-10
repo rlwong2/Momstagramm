@@ -2,19 +2,38 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import axios from 'axios';
+import StoriesHeader from './StoriesHeader.jsx';
 import Stories from './Stories.jsx';
 import Feed from './Feed.jsx';
-import AppHeader from './AppHeader.jsx';
 
 const AppContainer = styled.div`
     display: flex;
     flex-direction: column;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 0 auto;
+    position: absolute;
+`
+
+const FullscreenHide = styled.div`
+    visibility: ${props => props.fullscreen ? "visible" : "hidden"};
+    z-index: ${props => props.fullscreen ? "2000" : "0"};
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
 `
 
 export default function App() {
     const [photos, setPhotos] = useState([]);
     const [stories, setStories] = useState([]);
+    const [fullscreen, setFullscreen] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
@@ -28,10 +47,17 @@ export default function App() {
         fetchData()
     }, []);
 
+    const toggleFullscreen = (e) => {
+        console.log('triggered')
+        setFullscreen(!fullscreen)
+    }
+
     return(
         <AppContainer>
-            <AppHeader />
-            <Stories stories={stories} />
+            <FullscreenHide fullscreen={fullscreen} >
+                <Stories toggleFullscreen={toggleFullscreen} />
+            </FullscreenHide>
+            <StoriesHeader photos={photos} stories={stories} toggleFullscreen={toggleFullscreen} />
             <Feed photos={photos} />
         </AppContainer>
     )

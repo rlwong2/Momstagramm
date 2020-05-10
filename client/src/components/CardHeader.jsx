@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Img from 'react-image'
+
 
 const HeaderDiv = styled.div`
     display: flex;
@@ -11,12 +13,13 @@ const HeaderDiv = styled.div`
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 700;
+    margin-left: 10px;
 `
 
 const AvatarDiv = styled.div`
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    border-radius: 15px;
     box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
     background-position: 50% 50%;
     background-size: cover;
@@ -25,13 +28,19 @@ const AvatarDiv = styled.div`
 `
 
 export default function CardHeader(props) {
+    const AvatarImg = () => <Img src={props.photo.avatar} style={style} />
+
     const style = {
-        backgroundImage: "url(" + props.photo.avatar + ")"
+        width: '30px',
+        height: '30px',
+        borderRadius: '17px',
+        border: '2px solid #ccc',
+        marginRight: '8px'
     }
 
     return(
         <HeaderDiv>
-          <AvatarDiv style={style} />
+          <AvatarImg style={style} />
           {props.photo.username}
         </HeaderDiv>
     )
