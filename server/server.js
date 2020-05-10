@@ -4,6 +4,8 @@ const path = require('path');
 const cors = require('cors');
 const morgan = require('morgan');
 
+const db = require('../database/index')
+
 let app = express();
 
 app.use(cors());
@@ -19,13 +21,29 @@ app.get('/status', function(req, res){
 });
 
 app.get('/photos', function(req, res) {
-    db.getPhotos()
-    res.json()
+    db.getPhotos((err, data) => {
+      res.json(data)
+    })
 })
 
 app.get('/stories', function(req, res) {
     db.getStories()
     res.json()
+})
+
+app.post('/photos', function(req, res) {
+    db.postPhotos(req.body, (err, data) => {
+        if (err) console.log(err)
+        res.sendStatus(400)
+      })
+})
+
+app.delete('/photos/:id?', function(req, res) {
+    console.log(req.query.id)
+    db.deletePhoto(req.query.id, (err, data) => {
+        if (err) console.log(err)
+        res.sendStatus(400)
+      })
 })
 
 module.exports = app;

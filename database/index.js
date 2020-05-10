@@ -16,5 +16,42 @@ const photoSchema = new mongoose.Schema({
     caption: String
 })
 
-let Photo = mongoose.model('Photo', photoSchema);
+const Photos = mongoose.model('Photos', photoSchema);
+
+const getPhotos = (cb) => {
+    Photos.find()
+      .then((response) => {
+        cb(null, response)
+      })
+      .catch((err) => {
+        cb(err)
+      })
+  }
+
+const postPhotos = (object, cb) => {
+    Photos.create(object)
+        .then((response) => {
+            cb(null, response)
+        })
+        .catch((err) => {
+            cb(err) 
+        })
+}
+
+const deletePhoto = (id, cb) => {
+    Photos.findByIdAndDelete(id)
+        .then((response) => {
+            cb(null, response)
+        })
+        .catch((err) => {
+            cb(err) 
+        })
+}
+
+module.exports = {
+    Photos: Photos,
+    getPhotos: getPhotos,
+    postPhotos: postPhotos,
+    deletePhoto: deletePhoto,
+  };
 

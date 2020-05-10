@@ -14,6 +14,7 @@ export default function App() {
     useEffect(() => {
         async function fetchData() {
             const res = await axios.get('http://localhost:3000/photos');
+            console.log(res.data)
             setPhotos(res.data);
 
             const result = await axios.get('http://localhost:3000/stories');
