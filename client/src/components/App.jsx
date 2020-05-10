@@ -21,8 +21,8 @@ const AppContainer = styled.div`
 const FullscreenHide = styled.div`
     visibility: ${props => props.fullscreen ? "visible" : "hidden"};
     z-index: ${props => props.fullscreen ? "2000" : "0"};
-    height: 100%;
-    width: 100%;
+    height: 896px;
+    width: 414px;
     margin: 0;
     position: relative;
     top: 0;
