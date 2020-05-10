@@ -4,7 +4,7 @@ const path = require('path');
 const cors = require('cors');
 // const morgan = require('morgan');
 
-const db = require('../database/index')
+// const db = require('../database/index')
 
 let app = express();
 
@@ -24,6 +24,10 @@ app.get('/photos', function(req, res) {
     db.getPhotos((err, data) => {
       res.json(data)
     })
+})
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'))
 })
 
 app.get('/stories', function(req, res) {
