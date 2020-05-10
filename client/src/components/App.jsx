@@ -37,17 +37,17 @@ export default function App() {
     const [stories, setStories] = useState([]);
     const [fullscreen, setFullscreen] = useState(false);
 
-    useEffect(() => {
-        async function fetchData() {
-            const res = await axios.get('http://localhost:3000/photos');
-            console.log(res.data)
-            setPhotos(res.data);
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const res = await axios.get('http://localhost:3000/photos');
+    //         console.log(res.data)
+    //         setPhotos(res.data);
 
-            // const result = await axios.get('http://localhost:3000/stories');
-            // setStories(result.data);
-        }
-        fetchData()
-    }, []);
+    //         // const result = await axios.get('http://localhost:3000/stories');
+    //         // setStories(result.data);
+    //     }
+    //     fetchData()
+    // }, []);
 
     const toggleFullscreen = (e) => {
         console.log('triggered')

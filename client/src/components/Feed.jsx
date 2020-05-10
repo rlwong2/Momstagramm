@@ -15,6 +15,7 @@ const FeedDiv = styled.div`
     height: 100vh;
     width: 100vw;
     margin: 0 auto;
+    margin-bottom: 300px;
     z-index: 0.5;
 `
 
