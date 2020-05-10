@@ -11,9 +11,15 @@ const AppContainer = styled.div`
   font-weight: 500;
   text-align: center;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 60px;
   border-bottom: 1px solid #ccc; 
+  background-color: #fff;
+  z-index: 1;
 `
 
 const Title = styled.p`
