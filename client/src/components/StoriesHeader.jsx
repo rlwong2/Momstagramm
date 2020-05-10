@@ -21,6 +21,7 @@ const StoriesHeaderDiv = styled.div`
   background-color: #fff;
   z-index: 0.8;
   padding: 10px 0;
+  visibility: ${props => props.fullscreen ? "hidden" : "visible"};
 `
 
 const StoryAvatar = styled.div`
@@ -41,7 +42,7 @@ export default function StoriesHeader(props) {
     }
 
     return(
-        <StoriesHeaderDiv>
+        <StoriesHeaderDiv fullscreen={props.fullscreen}>
             <StoryAvatar onClick={props.toggleFullscreen} style={style} />
         </StoriesHeaderDiv>
     )

@@ -59,8 +59,8 @@ export default function App() {
             <FullscreenHide fullscreen={fullscreen} >
                 <Stories toggleFullscreen={toggleFullscreen} />
             </FullscreenHide>
-            <StoriesHeader photos={photos} stories={stories} toggleFullscreen={toggleFullscreen} />
-            <Feed photos={photos} />
+            <StoriesHeader photos={photos} stories={stories} toggleFullscreen={toggleFullscreen} fullscreen={fullscreen} />
+            <Feed photos={photos} fullscreen={fullscreen} />
         </AppContainer>
     )
 };

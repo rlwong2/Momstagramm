@@ -16,6 +16,7 @@ const FeedDiv = styled.div`
     width: 100vw;
     margin: 0 auto;
     z-index: 0.5;
+    visibility: ${props => props.fullscreen ? "hidden" : "visible"};
 `
 
 export default function Feed(props) {
@@ -103,7 +104,7 @@ export default function Feed(props) {
     ]
 
     return(
-        <FeedDiv>
+        <FeedDiv fullscreen={props.fullscreen}>
             <AppHeader />
           {blurbs.map((photo) => (
               
