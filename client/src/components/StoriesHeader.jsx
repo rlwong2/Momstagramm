@@ -11,7 +11,7 @@ const StoriesHeaderDiv = styled.div`
   font-weight: 500;
   text-align: center;
   position: relative;
-  top: 60px;
+  top: 100px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -19,7 +19,8 @@ const StoriesHeaderDiv = styled.div`
   height: 100px;
   border-bottom: 1px solid #ccc; 
   background-color: #fff;
-  z-index: 1.1;
+  z-index: 0.8;
+  padding: 10px 0;
 `
 
 const StoryAvatar = styled.div`

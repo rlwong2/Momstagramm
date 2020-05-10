@@ -14,6 +14,7 @@ const HeaderDiv = styled.div`
     font-size: 14px;
     font-weight: 700;
     margin-left: 10px;
+    padding: 15px 0;
 `
 
 const AvatarDiv = styled.div`

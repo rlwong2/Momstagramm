@@ -4,13 +4,12 @@ import styled from 'styled-components';
 import Img from 'react-image'
 
 const CardDiv = styled.div`
-    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 60px;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
 `
-
 
 const Caption = styled.div`
     font-size: 14px;
@@ -21,11 +20,11 @@ const Caption = styled.div`
 
 const PhotoDiv = styled.div`
     width: 396px;
-    border-radius: 8px;
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
+    border-radius: 10px;
     background-position: 50% 50%;
     background-size: cover;
     margin: 0 auto;
+    border: 1px solid #ccc;
 `
 
 export default function Card(props) {
@@ -37,12 +36,12 @@ export default function Card(props) {
     const PhotoImg = () => <Img src={props.photo.url} style={style} />
 
     return(
-        <div>
+        <CardDiv>
             <CardHeader photo={props.photo} />
             <PhotoDiv>
                 <PhotoImg />
             </PhotoDiv>
             <Caption><b>{props.photo.username}</b> {props.photo.caption}</Caption>
-        </div>
+        </CardDiv>
     )
 }

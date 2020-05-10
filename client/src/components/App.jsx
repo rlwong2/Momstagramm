@@ -10,10 +10,12 @@ const AppContainer = styled.div`
     display: flex;
     flex-direction: column;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: stretch;
     margin: 0 auto;
     position: absolute;
+    top: 0;
+    bottom: 0;
 `
 
 const FullscreenHide = styled.div`
